@@ -1,0 +1,308 @@
+section {
+    background-color: #fca1ff;
+    
+}
+body {
+    overflow: hidden;
+}
+.shadows-into-light-two-regular {
+  font-family: "Shadows Into Light Two", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.meow-script-regular {
+  font-family: "Meow Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.btnNext {
+  padding: 17px 40px;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(255, 56, 86);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+.btnNext:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+
+button:active {
+  background-color: rgb(255, 56, 86);
+  /*50, 168, 80*/
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+
+
+.pink-input {
+  border: 2px solid #ff69b4;
+  border-radius: 12px;
+  padding: 7px 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.pink-input::placeholder {
+  color: #ff9acb;
+}
+
+.pink-input:focus {
+  border-color: #ff1493;
+  box-shadow: 0 0 8px rgba(255, 20, 147, 0.35);
+  outline: none;
+}
+
+
+.heart-section {
+  position: relative;
+  overflow: hidden;
+  background: #ffe6ec;
+}
+
+/* hearts layer */
+.hearts-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;   /* background layer */
+  pointer-events: none;
+}
+
+/* white card */
+.card-box {
+  max-width: 600px;
+  width: 90%;
+  height: 500px;
+  border-radius: 10px;
+  background: white;
+  position: relative;
+  z-index: 10;  /* FORCE above hearts */
+}
+
+/* hearts */
+.hearts-bg span {
+  position: absolute;
+  bottom: -50px;
+  font-size: 32px;              /* BIGGER */
+  animation: floatUp 7s linear infinite;  /* FASTER */
+  opacity: 0.75;
+}
+
+/* more hearts + better spread */
+.hearts-bg span:nth-child(1) { left: 5%; animation-delay: 0s; }
+.hearts-bg span:nth-child(2) { left: 15%; animation-delay: 1s; }
+.hearts-bg span:nth-child(3) { left: 25%; animation-delay: 2s; }
+.hearts-bg span:nth-child(4) { left: 40%; animation-delay: 0.5s; }
+.hearts-bg span:nth-child(5) { left: 55%; animation-delay: 1.5s; }
+.hearts-bg span:nth-child(6) { left: 70%; animation-delay: 2.5s; }
+.hearts-bg span:nth-child(7) { left: 85%; animation-delay: 0.8s; }
+.hearts-bg span:nth-child(8) { left: 95%; animation-delay: 1.8s; }
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% { opacity: 0.8; }
+  to {
+    transform: translateY(-110vh) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.fade-bounce {
+  opacity: 0;                /* start invisible */
+  animation: fadeBounce 1.5s ease forwards;  /* 1s duration, forwards keeps the final state */
+}
+
+@keyframes fadeBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);  /* start above */
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(10px);   /* bounce down past final position */
+  }
+  80% {
+    transform: translateY(-10px);  /* bounce back up a bit */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);      /* final position */
+  }
+}
+
+.zoom-fade {
+  opacity: 0;  /* start invisible */
+  transform: scale(0.5);  /* start small */
+  animation: zoomFadeIn 1s ease forwards; /* duration 1s, keep final state */
+}
+
+@keyframes zoomFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.story-script-regular {
+  font-family: "Story Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* From Uiverse.io by saritha_7555 */ 
+.btn-wrapper {
+  --width: 150px;
+  --height: 60px;
+  --padding: 8px;
+  --border-radius: 24px;
+  --dot-size: 8px;
+  --btn-color: #ff69b4; /* pink base */
+  --hue: 330deg; /* pinkish hue for animations */
+  --animation-duration: 1.2s;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background-color: #ff69b408; /* transparent pink background */
+  box-shadow:
+    1px 1px 2px 0 #fffd,
+    2px 2px 2px #0001 inset,
+    2px 2px 4px #0001 inset,
+    2px 2px 8px #0001 inset;
+  perspective: 150px;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    box-shadow 0.05s linear,
+    transform 0.05s linear;
+}
+
+.btn2 {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.25em;
+  text-align: left;
+  padding: 0 var(--height) 0 calc(var(--padding) * 2);
+  width: calc(100% - 2 * var(--padding));
+  height: calc(100% - 2 * var(--padding));
+  border-radius: calc(var(--border-radius) - var(--padding));
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(#ffb6c1aa, #ff69b4aa), var(--btn-color); /* pink gradient */
+  box-shadow:
+    1px 1px 2px -1px #fff inset,
+    0 2px 1px #ff69b410,
+    0 4px 2px #ff69b410,
+    0 8px 4px #ff69b410,
+    0 16px 8px #ff69b410,
+    0 32px 16px #ff69b410;
+  transition:
+    transform 0.15s cubic-bezier(0.25, 1.5, 0.5, 1.5),
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+  z-index: 2;
+}
+
+.toggle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;     /* make it invisible */
+  z-index: 5;     /* above the button for clicking */
+  cursor: pointer;
+  appearance: none; /* remove default checkbox styling in all browsers */
+}
+
+.btn-txt {
+  position: absolute;
+  font-family: "Montserrat", "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(255, 182, 193, 0.8); /* light pink text */
+  background-image: linear-gradient(#ffb6c1, #ff69b4);
+  background-clip: text;
+  filter: drop-shadow(0 1px 0px #fff) drop-shadow(0 -1px 0px #ff69b440);
+  transition: opacity 0.2s ease;
+}
+
+.playing {
+  opacity: 0;
+}
+
+.toggle:checked ~ .btn2 .play {
+  opacity: 0;
+}
+.toggle:checked ~ .btn2 .playing {
+  opacity: 1;
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  right: calc(var(--height) / 2 - var(--padding) / 2);
+  width: var(--dot-size);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: hsla(var(--hue), 90%, 50%, 0.2);
+  border: 1px solid hsla(var(--hue), 100%, 70%, 0.8);
+  box-shadow:
+    1px 1px 2px -1px #fff inset,
+    0 2px 1px #ff69b410,
+    0 4px 2px #ff69b410,
+    0 8px 4px #ff69b410;
+  pointer-events: none;
+  z-index: 3;
+  transform: translateY(-50%);
+  transition: all 0.15s ease;
+}
+
+.toggle:checked ~ .btn2 .dot {
+  animation: pulse var(--animation-duration) ease-in-out infinite;
+  background-color: hsl(var(--hue), 90%, 60%);
+  box-shadow:
+    0 0 6px 1px hsl(var(--hue), 100%, 70%),
+    0 0 20px 5px hsl(var(--hue), 100%, 80%, 0.4);
+}
+
+/* Hover & Press */
+.btn-wrapper:hover .btn2,
+.btn-wrapper:focus-within .btn2 {
+  transform: translate3d(0, -2px, 2px);
+  filter: drop-shadow(
+    var(--padding) 0 var(--padding) hsla(var(--hue), 80%, 70%, 0.6)
+  );
+}
+
+.btn-wrapper:active .btn2 {
+  transform: translate3d(0, 2px, -2px);
+  box-shadow:
+    1px 1px 2px 0 #fff,
+    2px 2px 2px #0001 inset,
+    2px 2px 4px #0001 inset,
+    2px 2px 8px #0001 inset,
+    0 0 32px 2px hsla(var(--hue), 80%, 70%, 0.5) inset;
+}
+
+
+
